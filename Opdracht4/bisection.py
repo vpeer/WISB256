@@ -2,17 +2,13 @@ import math
 def findRoot(f,a,b,epsilon):
     m=(a+b)/2
     if f(a)==0:
-        print(a)
-        exit()
+        return a
     if f(b)==0:
-        print(b)
-        exit()
+        return b
     if f(m)==0:
-        print(m)
-        exit()
+        return m
     if abs(b-a)<= epsilon:
-        print(m)
-        exit()
+        return m
     if f(a)<0 and f(b)>0:
         if f(m)< 0:
             return findRoot(f,m,b,epsilon)
@@ -23,5 +19,3 @@ def findRoot(f,a,b,epsilon):
             return findRoot(f,m,b,epsilon)
         if f(m)<0:
             return findRoot(f,a,m,epsilon)
-    else:
-        exit()
